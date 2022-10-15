@@ -5,21 +5,20 @@ import 'package:url_launcher/url_launcher.dart';
 import '../utilities/funcAndData.dart';
 import '../screens/update_page.dart';
 
-class bookingsBody extends StatefulWidget {
-  const bookingsBody({required this.filial});
+class BookingsBody extends StatefulWidget {
+  const BookingsBody({required this.filial});
   final String filial;
 
   @override
-  State<bookingsBody> createState() => _bookingsBodyState();
+  State<BookingsBody> createState() => _BookingsBodyState();
 }
 
-class _bookingsBodyState extends State<bookingsBody> {
+class _BookingsBodyState extends State<BookingsBody> {
   @override
   Widget build(BuildContext context) {
     return RefreshIndicator(
       onRefresh: () async {
-        setState(() {
-        });
+        setState(() {});
       },
       child: StreamBuilder(
         stream: DataBase.db
@@ -51,8 +50,9 @@ class _bookingsBodyState extends State<bookingsBody> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                '${snapshot.data?.docs[index].get('name')}, ${snapshot.data?.docs[index].get('arrival time')}',
+                                '${snapshot.data?.docs[index].get('name')}',
                                 style: TextStyle(
+                                    fontWeight: FontWeight.w300,
                                     fontSize: 24.sp,
                                     color: ColorsUtils.whiteColor),
                               ),
@@ -77,12 +77,19 @@ class _bookingsBodyState extends State<bookingsBody> {
                           ),
                           getTextFiled(
                             text:
+                                'Время: ${snapshot.data?.docs[index].get('arrival time')}',
+                          ),
+                          SizedBox(
+                            height: 10.h,
+                          ),
+                          getTextFiled(
+                            text:
                                 'Кол-во персон: ${snapshot.data?.docs[index].get('count')}',
                           ),
                           TextButton(
                             onPressed: () {
                               _makePhoneCall(
-                                  snapshot.data?.docs[index].get('number'));
+                                  snapshot.data?.docs[index].get('phone number'));
                             },
                             style: ButtonStyle(
                               padding: MaterialStateProperty.all<EdgeInsets>(
@@ -91,9 +98,10 @@ class _bookingsBodyState extends State<bookingsBody> {
                             child: Text(
                                 '${snapshot.data?.docs[index].get('phone number')}',
                                 style: TextStyle(
-                                    fontSize: 22.sp,
-                                    color: ColorsUtils.whiteColor,
-                                    fontWeight: FontWeight.normal)),
+                                  fontSize: 22.sp,
+                                  color: ColorsUtils.whiteColor,
+                                  fontWeight: FontWeight.w300,
+                                )),
                           ),
                           SizedBox(
                             height: 15.h,
@@ -238,5 +246,9 @@ Widget textNoBooked() {
 
 Widget getTextFiled({required String text}) {
   return Text(text,
-      style: TextStyle(fontSize: 22.sp, color: ColorsUtils.whiteColor));
+      style: TextStyle(
+        fontSize: 22.sp,
+        color: ColorsUtils.whiteColor,
+        fontWeight: FontWeight.w300,
+      ));
 }

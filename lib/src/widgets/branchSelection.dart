@@ -72,7 +72,6 @@ class _BranchSelectionState extends State<BranchSelection> {
                     style: TextStyle(
                       fontSize: 18.sp,
                       color: ColorsUtils.darkgreenColor,
-                      fontWeight: FontWeight.bold,
                     ),
                   )),
             ),
@@ -99,7 +98,6 @@ class _BranchSelectionState extends State<BranchSelection> {
                   style: TextStyle(
                     fontSize: 18.sp,
                     color: ColorsUtils.darkgreenColor,
-                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ),
@@ -194,7 +192,7 @@ Widget TextBranchSelection() {
     padding: EdgeInsets.only(top: 75, bottom: 75),
     child: Text(
       'Выберите филиал',
-      style: TextStyle(color: ColorsUtils.whiteColor, fontSize: 26.sp),
+      style: TextStyle(color: ColorsUtils.whiteColor, fontSize: 26.sp,),
     ),
   );
 }

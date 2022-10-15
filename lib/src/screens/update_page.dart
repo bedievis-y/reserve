@@ -80,7 +80,7 @@ class _UserUpdateState extends State<UserUpdate> {
     getDocumentData();
     super.initState();
   }
-  
+
   @override
   void dispose() {
     _controllerName.dispose();
@@ -95,7 +95,7 @@ class _UserUpdateState extends State<UserUpdate> {
         backgroundColor: ColorsUtils.darkgreenColor,
         title: Text(
           'Изменить данные',
-          style: TextStyle(fontSize: 18.sp),
+          style: TextStyle(fontSize: 18.sp,fontWeight: FontWeight.w400),
         ),
       ),
       body: Form(
@@ -107,8 +107,10 @@ class _UserUpdateState extends State<UserUpdate> {
               textCapitalization: TextCapitalization.sentences,
               controller: _controllerName,
               onChanged: (String userName) {
-                _controllerName..text = userName
-                ..selection = TextSelection.collapsed(offset: _controllerName.text.length);
+                _controllerName
+                  ..text = userName
+                  ..selection = TextSelection.collapsed(
+                      offset: _controllerName.text.length);
               },
               decoration: inputdecoration('Имя'),
               inputFormatters: [
@@ -122,8 +124,10 @@ class _UserUpdateState extends State<UserUpdate> {
             TextFormField(
               controller: _controllerNumber,
               onChanged: (var value) {
-                _controllerNumber..text = value
-                ..selection = TextSelection.collapsed(offset: _controllerNumber.text.length);
+                _controllerNumber
+                  ..text = value
+                  ..selection = TextSelection.collapsed(
+                      offset: _controllerNumber.text.length);
               },
               decoration:
                   inputdecoration('Номер телефона', prefixText: '+998 '),
@@ -152,7 +156,7 @@ class _UserUpdateState extends State<UserUpdate> {
               iconSize: 20.r,
               elevation: 16,
               style:
-                  TextStyle(fontSize: 24.sp, color: ColorsUtils.darkgreenColor),
+                  TextStyle(fontSize: 24.sp, color: ColorsUtils.darkgreenColor,fontWeight: FontWeight.w400),
               underline: Container(
                 height: 2,
                 color: ColorsUtils.darkgreenColor,
@@ -207,7 +211,7 @@ class _UserUpdateState extends State<UserUpdate> {
                 ),
                 child: Text(
                   '${time.hour}:${time.minute.toString().padLeft(2, '0')}',
-                  style: TextStyle(fontSize: 20.sp),
+                  style: TextStyle(fontSize: 20.sp,fontWeight: FontWeight.w400),
                 ),
               ),
             ),
@@ -230,7 +234,7 @@ class _UserUpdateState extends State<UserUpdate> {
                   _userTable = newValue!;
                 });
               },
-              items: _tableSelection(widget)
+              items: _tableSelection(widget.filial)
                   .map<DropdownMenuItem<String>>((_userTable) {
                 return DropdownMenuItem<String>(
                   child: Text(_userTable),
@@ -245,7 +249,7 @@ class _UserUpdateState extends State<UserUpdate> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
-                  width: 150.w,
+                  // width: 150.w,
                   height: 40.h,
                   child: ElevatedButton(
                     onPressed: () {
@@ -254,7 +258,10 @@ class _UserUpdateState extends State<UserUpdate> {
                     },
                     child: Text(
                       'Сохранить',
-                      style: TextStyle(fontSize: 18.sp),
+                      style: TextStyle(
+                        fontSize: 18.sp,
+                        fontWeight: FontWeight.w300,
+                      ),
                     ),
                   ),
                 ),
@@ -271,7 +278,10 @@ class _UserUpdateState extends State<UserUpdate> {
                     ),
                     child: Text(
                       'Отмена',
-                      style: TextStyle(fontSize: 18.sp),
+                      style: TextStyle(
+                        fontSize: 18.sp,
+                        fontWeight: FontWeight.w300,
+                      ),
                     ),
                   ),
                 ),
@@ -360,7 +370,7 @@ Widget textFiled({required String text}) {
     text,
     style: TextStyle(
         fontSize: 24.sp,
-        fontWeight: FontWeight.bold,
+        fontWeight: FontWeight.w400,
         color: ColorsUtils.darkgreenColor),
   );
 }

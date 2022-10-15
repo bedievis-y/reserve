@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'add_page.dart';
 import '../widgets/bookingsBody.dart';
 import '../utilities/funcAndData.dart';
+import '../screens/history_page.dart';
+
 
 class UserBookings extends StatelessWidget {
   const UserBookings({required this.filial});
@@ -24,18 +27,29 @@ class UserBookings extends StatelessWidget {
               Icons.add,
               color: ColorsUtils.whiteColor,
             ),
-          )
+          ),
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => HistoryBooking(
+                          filial: filial)));
+            },
+            icon: Icon(
+              Icons.history,
+              color: ColorsUtils.whiteColor,
+            ),
+          ),
         ],
       ),
-      body: bookingsBody(filial: filial),
+      body: BookingsBody(filial: filial),
       // floatingActionButton: FloatingActionButton(
       //   onPressed: () {
       //     Navigator.push(
-      //       context,
-      //       MaterialPageRoute(
-      //         builder: (context) => AddPerson(filial: filial),
-      //       ),
-      //     );
+      //         context,
+      //         MaterialPageRoute(
+      //             builder: (context) => AddPerson(filial: filial)));
       //   },
       //   tooltip: '',
       //   child: const Icon(Icons.add),

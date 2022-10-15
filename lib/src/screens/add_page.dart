@@ -83,7 +83,10 @@ class _AddPersonMilliyState extends State<AddPerson> {
         backgroundColor: ColorsUtils.darkgreenColor,
         title: Text(
           'Введите данные для брони',
-          style: TextStyle(fontSize: 18.sp),
+          style: TextStyle(
+            fontSize: 18.sp,
+            fontWeight: FontWeight.w400,
+          ),
         ),
       ),
       body: Form(
@@ -136,7 +139,7 @@ class _AddPersonMilliyState extends State<AddPerson> {
               iconSize: 20.r,
               elevation: 16,
               style:
-                  TextStyle(fontSize: 24.sp, color: ColorsUtils.darkgreenColor),
+                  TextStyle(fontSize: 24.sp, color: ColorsUtils.darkgreenColor,fontWeight: FontWeight.w400),
               underline: Container(
                 height: 2,
                 color: ColorsUtils.darkgreenColor,
@@ -192,7 +195,7 @@ class _AddPersonMilliyState extends State<AddPerson> {
                 ),
                 child: Text(
                   '${time.hour}:${time.minute.toString().padLeft(2, '0')}',
-                  style: TextStyle(fontSize: 20.sp),
+                  style: TextStyle(fontSize: 20.sp,fontWeight: FontWeight.w400),
                 ),
               ),
             ),
@@ -204,7 +207,7 @@ class _AddPersonMilliyState extends State<AddPerson> {
               iconSize: 20.r,
               elevation: 16,
               style:
-                  TextStyle(fontSize: 24.sp, color: ColorsUtils.darkgreenColor),
+                  TextStyle(fontSize: 24.sp, color: ColorsUtils.darkgreenColor,fontWeight: FontWeight.w400),
               underline: Container(
                 height: 2,
                 color: ColorsUtils.darkgreenColor,
@@ -230,7 +233,7 @@ class _AddPersonMilliyState extends State<AddPerson> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Container(
-                  width: 150.w,
+                  // width: 150.w,
                   height: 40.h,
                   child: ElevatedButton(
                     onPressed: () {
@@ -239,7 +242,10 @@ class _AddPersonMilliyState extends State<AddPerson> {
                     },
                     child: Text(
                       'Подтвердить',
-                      style: TextStyle(fontSize: 18.sp),
+                      style: TextStyle(
+                        fontSize: 18.sp,
+                        fontWeight: FontWeight.w300,
+                      ),
                     ),
                   ),
                 ),
@@ -256,7 +262,10 @@ class _AddPersonMilliyState extends State<AddPerson> {
                     ),
                     child: Text(
                       'Отмена',
-                      style: TextStyle(fontSize: 18.sp),
+                      style: TextStyle(
+                        fontSize: 18.sp,
+                        fontWeight: FontWeight.w300,
+                      ),
                     ),
                   ),
                 ),
@@ -349,7 +358,7 @@ Widget textFiled({required String text}) {
     text,
     style: TextStyle(
         fontSize: 24.sp,
-        fontWeight: FontWeight.bold,
+        fontWeight: FontWeight.w400,
         color: ColorsUtils.darkgreenColor),
   );
 }
