@@ -1,0 +1,106 @@
+{
+  "project_info": {
+    "project_number": "487007551210",
+    "project_id": "timekeeper-company",
+    "storage_bucket": "timekeeper-company.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:487007551210:android:e3bbb67b251f0df4a66193",
+        "android_client_info": {
+          "package_name": "com.example.tkbooking111"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "487007551210-j8i1q2uia59ejhd60381a7n70ftg8bs1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBRTkiLjHsoYOVfMp98JJUgzn3F123R0A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "487007551210-j8i1q2uia59ejhd60381a7n70ftg8bs1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "487007551210-6kru4l414an8b6d1bq8mh6m10ukk8ikf.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.tkbooking111"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:487007551210:android:a38ba2fe53e9daaea66193",
+        "android_client_info": {
+          "package_name": "com.timekeepernew.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "487007551210-2dhs33nl3amu14pvjf8l9becr4397dpr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.timekeepernew.app",
+            "certificate_hash": "75d1507f152367e1008e0f59475fb07716fe9edb"
+          }
+        },
+        {
+          "client_id": "487007551210-7076aft565u8226dq7dhu20usiickjjm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.timekeepernew.app",
+            "certificate_hash": "4b10f52cc6e9a488307a21e42f727690c95a660d"
+          }
+        },
+        {
+          "client_id": "487007551210-evij339d45bp58pgb0i10oqi4maat3mf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.timekeepernew.app",
+            "certificate_hash": "783e40406c1282ec0ec19f103f5a05fea6988e80"
+          }
+        },
+        {
+          "client_id": "487007551210-j8i1q2uia59ejhd60381a7n70ftg8bs1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBRTkiLjHsoYOVfMp98JJUgzn3F123R0A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "487007551210-j8i1q2uia59ejhd60381a7n70ftg8bs1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "487007551210-6kru4l414an8b6d1bq8mh6m10ukk8ikf.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.tkbooking111"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
