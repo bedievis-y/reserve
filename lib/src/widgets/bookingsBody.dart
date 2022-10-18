@@ -21,10 +21,15 @@ class _BookingsBodyState extends State<BookingsBody> {
         setState(() {});
       },
       child: StreamBuilder(
+<<<<<<< Updated upstream
         stream: DataBase.db
             .collection('Reserve')
             .doc(Func.returnDataNow())
             .collection(Func.returnSubcollection(widget.filial))
+=======
+        stream: Func.returnData(filial)
+            .orderBy('created_date', descending: true)
+>>>>>>> Stashed changes
             .snapshots(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           print(!snapshot.hasData || snapshot.data!.docs.isEmpty);
@@ -47,6 +52,7 @@ class _BookingsBodyState extends State<BookingsBody> {
                         children: [
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+<<<<<<< Updated upstream
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
@@ -78,6 +84,29 @@ class _BookingsBodyState extends State<BookingsBody> {
                           getTextFiled(
                             text:
                                 'Время: ${snapshot.data?.docs[index].get('arrival time')}',
+=======
+                            children: [
+                              Text(
+                                '${snapshot.data?.docs[index].get('name')}, ${snapshot.data?.docs[index].get('time')}',
+                                style: TextStyle(
+                                    fontSize: 28.sp,
+                                    color: ColorsUtils.whiteColor),
+                              ),
+                              Container(
+                                width: 50.w,
+                                height: 50.h,
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                  color: ColorsUtils.whiteColor,
+                                  borderRadius: BorderRadius.circular(10)
+                                ),
+                                child: Text('${snapshot.data?.docs[index].get('numberTable')}',
+                                    style: TextStyle(
+                                        fontSize: 28.sp,
+                                        color: ColorsUtils.darkgreenColor)),
+                              ),
+                            ],
+>>>>>>> Stashed changes
                           ),
                           SizedBox(
                             height: 10.h,
@@ -98,10 +127,16 @@ class _BookingsBodyState extends State<BookingsBody> {
                             child: Text(
                                 '${snapshot.data?.docs[index].get('phone number')}',
                                 style: TextStyle(
+<<<<<<< Updated upstream
                                   fontSize: 22.sp,
                                   color: ColorsUtils.whiteColor,
                                   fontWeight: FontWeight.w300,
                                 )),
+=======
+                                    fontSize: 24.sp,
+                                    color: ColorsUtils.whiteColor,
+                                    fontWeight: FontWeight.normal)),
+>>>>>>> Stashed changes
                           ),
                           SizedBox(
                             height: 15.h,
@@ -110,7 +145,11 @@ class _BookingsBodyState extends State<BookingsBody> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Container(
+<<<<<<< Updated upstream
                                 height: 35.h,
+=======
+                                height: 40.h,
+>>>>>>> Stashed changes
                                 child: ElevatedButton(
                                   onPressed: () {
                                     String collectionName = 'Archive';
@@ -141,7 +180,20 @@ class _BookingsBodyState extends State<BookingsBody> {
                               Container(
                                 height: 35.h,
                                 child: ElevatedButton(
+                                    onPressed: () {},
+                                    style: ButtonStyle(
+                                      backgroundColor:
+                                          MaterialStateProperty.all<Color>(
+                                        Colors.grey,
+                                      ),
+                                    ),
+                                    child: Icon(Icons.close)),
+                              ),
+                              Container(
+                                height: 40.h,
+                                child: ElevatedButton(
                                   onPressed: () {
+<<<<<<< Updated upstream
                                     Navigator.push(
                                         context,
                                         MaterialPageRoute(
@@ -152,6 +204,29 @@ class _BookingsBodyState extends State<BookingsBody> {
                                           ),
                                           maintainState: false,
                                         ));
+=======
+                                    Func.returnData(filial)
+                                        .doc(snapshot.data!.docs[index].id)
+                                        .delete();
+                                    Future<QuerySnapshot> books = Func
+                                            .returnData(filial)
+                                        .doc(snapshot.data!.docs[index].id)
+                                        .collection(
+                                            Func.returnSubcollection(filial))
+                                        .get();
+                                    books.then((value) {
+                                      value.docs.forEach((element) {
+                                        Func.returnData(filial)
+                                            .doc(snapshot.data!.docs[index].id)
+                                            .collection(
+                                                Func.returnSubcollection(
+                                                    filial))
+                                            .doc(element.id)
+                                            .delete()
+                                            .then((value) => print("success"));
+                                      });
+                                    });
+>>>>>>> Stashed changes
                                   },
                                   style: ButtonStyle(
                                     backgroundColor:
@@ -246,9 +321,13 @@ Widget textNoBooked() {
 
 Widget getTextFiled({required String text}) {
   return Text(text,
+<<<<<<< Updated upstream
       style: TextStyle(
         fontSize: 22.sp,
         color: ColorsUtils.whiteColor,
         fontWeight: FontWeight.w300,
       ));
+=======
+      style: TextStyle(fontSize: 24.sp, color: ColorsUtils.whiteColor));
+>>>>>>> Stashed changes
 }

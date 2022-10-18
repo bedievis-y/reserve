@@ -108,6 +108,7 @@ class _BranchSelectionState extends State<BranchSelection> {
     );
   }
 
+<<<<<<< Updated upstream
   openDialog() => showDialog(
         barrierDismissible: false,
         context: context,
@@ -146,6 +147,34 @@ class _BranchSelectionState extends State<BranchSelection> {
                 )
               ],
             ),
+=======
+class ButtonMilliy extends StatelessWidget {
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 120.w,
+      height: 50.h,
+      child: ElevatedButton(
+        style: ButtonStyle(
+          backgroundColor: MaterialStateProperty.all<Color>(
+            ColorsUtils.whiteColor,
+          ),
+        ),
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => UserBookings(filial: 'milliy'),
+              ));
+        },
+        child: Text(
+          'Milliy',
+          style: TextStyle(
+            fontSize: 18.sp,
+            color: ColorsUtils.darkgreenColor,
+            fontWeight: FontWeight.bold,
+>>>>>>> Stashed changes
           ),
         ),
       );
@@ -196,3 +225,40 @@ Widget TextBranchSelection() {
     ),
   );
 }
+<<<<<<< Updated upstream
+=======
+
+class ButtonWest extends StatelessWidget {
+  const ButtonWest({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 50.h,
+      child: ElevatedButton(
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => UserBookings(filial: 'west'),
+                ));
+          },
+          style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all<Color>(
+              ColorsUtils.whiteColor,
+            ),
+          ),
+          child: Text(
+            'Westminster',
+            style: TextStyle(
+              fontSize: 18.sp,
+              color: ColorsUtils.darkgreenColor,
+              fontWeight: FontWeight.bold,
+            ),
+          )),
+    );
+  }
+}
+>>>>>>> Stashed changes

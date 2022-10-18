@@ -52,6 +52,7 @@ class _HistoryBodyWidgetState extends State<HistoryBodyWidget> {
                         children: [
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+<<<<<<< Updated upstream
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
@@ -79,6 +80,32 @@ class _HistoryBodyWidgetState extends State<HistoryBodyWidget> {
                                         color: ColorsUtils.darkgreenColor)),
                               ),
                             ],
+=======
+                            children: [
+                              Text(
+                                '${snapshot.data?.docs[index].get('name')}, ${snapshot.data?.docs[index].get('time')}',
+                                style: TextStyle(
+                                    fontSize: 28.sp,
+                                    color: ColorsUtils.whiteColor),
+                              ),
+                              Container(
+                                width: 50.w,
+                                height: 50.h,
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                  color: ColorsUtils.whiteColor,
+                                  borderRadius: BorderRadius.circular(10)
+                                ),
+                                child: Text('${snapshot.data?.docs[index].get('numberTable')}',
+                                    style: TextStyle(
+                                        fontSize: 28.sp,
+                                        color: ColorsUtils.darkgreenColor)),
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 15.h,
+>>>>>>> Stashed changes
                           ),
                           Text(
                               'Время: ${snapshot.data?.docs[index].get('arrival time')}',
@@ -87,6 +114,7 @@ class _HistoryBodyWidgetState extends State<HistoryBodyWidget> {
                                   fontSize: 22.sp,
                                   color: ColorsUtils.whiteColor)),
                           SizedBox(
+<<<<<<< Updated upstream
                             height: 10,
                           ),
                           Text(
@@ -115,6 +143,9 @@ class _HistoryBodyWidgetState extends State<HistoryBodyWidget> {
                           ),
                           SizedBox(
                             height: 15.h,
+=======
+                            height: 20.h,
+>>>>>>> Stashed changes
                           ),
                           Container(
                             alignment: Alignment.center,
